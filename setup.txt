@@ -1,0 +1,7 @@
+1. create a database; name = ice_cream;
+2. import sql file into `ice_cream` database (locatoon: sql/ice_cream.sql)
+
+admin-panel
+-----------------
+email: admin@mail.com
+password : 111
