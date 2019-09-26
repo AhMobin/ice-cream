@@ -1,11 +1,12 @@
+
 -- phpMyAdmin SQL Dump
 -- version 4.4.15.9
 -- https://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Sep 19, 2019 at 03:30 PM
+-- Generation Time: Sep 26, 2019 at 06:05 PM
 -- Server version: 5.6.37
--- PHP Version: 5.6.31
+-- PHP Version: 7.1.8
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -40,6 +41,27 @@ CREATE TABLE IF NOT EXISTS `admins` (
 
 INSERT INTO `admins` (`admin_id`, `admin_name`, `admin_email`, `admin_password`, `admin_role`) VALUES
 (1, 'Abu Huraira', 'admin@mail.com', '698d51a19d8a121ce581499d7b701668', 1);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `banners`
+--
+
+CREATE TABLE IF NOT EXISTS `banners` (
+  `banner_id` int(11) NOT NULL,
+  `banner_heading` varchar(255) NOT NULL,
+  `banner_desc` varchar(255) NOT NULL,
+  `banner_img` varchar(200) NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `banners`
+--
+
+INSERT INTO `banners` (`banner_id`, `banner_heading`, `banner_desc`, `banner_img`) VALUES
+(1, 'Banner 1 Updated', 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, doloremque laudantium, totam rem aperiam', 'banner-1.jpg'),
+(2, 'Banner 2', 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, doloremque laudantium, totam rem aperiam', 'banner-2.jpg');
 
 -- --------------------------------------------------------
 
@@ -85,7 +107,7 @@ CREATE TABLE IF NOT EXISTS `footers` (
 --
 
 INSERT INTO `footers` (`foo_id`, `foo_heading`, `foo_desc`, `foo_location`, `foo_phone`, `foo_email`, `foo_copyright`, `foo_devname`, `foo_devlink`) VALUES
-(1, 'we are best in making ice creams', 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, doloremque laudantium, totam rem aperiam', '#5 Dhanmondi, Dhaka', '+88(01) 1234 567 891.', 'example@gmail.com', '2019 Ice Cream. All rights reserved | Developed by', 'Abu Huraira', '');
+(1, 'we are best in making ice creams', 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, doloremque laudantium, totam rem aperiam', '#5 Dhanmondi, Dhaka', '+88(01) 1234 567 891.', 'example@gmail.com', '2019 Ice Cream. All rights reserved | Developed by', 'AH Mobin', '');
 
 -- --------------------------------------------------------
 
@@ -108,7 +130,7 @@ INSERT INTO `galleries` (`gl_img_id`, `gl_img_heading`, `gl_img_desc`, `gl_img_n
 (5, 'Chocolate Ice Cream', 'Enim a viverra tincidunt, tortorin urna porta ligula, venenatis vestibulum sapien augue vitae ligula. ', '5.jpg'),
 (6, 'Chocolate Vanela', 'Phasellus vel augue sem. Nulla auctor elit augue, eu volutpat risus tincidunt ullamcorper.', '6.jpg'),
 (7, 'Chocolate Vanela', 'Phasellus vel augue sem. Nulla auctor elit augue, eu volutpat risus tincidunt ullamcorper.', '7.jpg'),
-(8, ' French Vanilla Cream ', 'Phasellus vel augue sem. Nulla auctor elit augue, eu volutpat risus tincidunt ullamcorper.', '8.jpg'),
+(8, ' French Vanilla Cream', 'Phasellus vel augue sem. Nulla auctor elit augue, eu volutpat risus tincidunt ullamcorper.', '8.jpg'),
 (9, 'Chocolate Frosted Cupcake', 'Phasellus vel augue sem. Nulla auctor elit augue, eu volutpat risus tincidunt ullamcorper.', '9.jpg'),
 (10, ' Banana Berry Smoothie ', 'Phasellus vel augue sem. Nulla auctor elit augue, eu volutpat risus tincidunt ullamcorper.', '10.jpg');
 
@@ -143,6 +165,32 @@ INSERT INTO `menus` (`menu_id`, `menu_category`, `menu_name`, `menu_desc`, `menu
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `sliders`
+--
+
+CREATE TABLE IF NOT EXISTS `sliders` (
+  `slider_id` int(11) NOT NULL,
+  `slider_heading` varchar(100) NOT NULL,
+  `slider_desc` varchar(200) NOT NULL,
+  `slider_button` varchar(100) NOT NULL,
+  `slider_btn_link` varchar(255) NOT NULL,
+  `slider_ico_img` varchar(255) NOT NULL,
+  `slider_bg_img` varchar(255) NOT NULL,
+  `slider_status` int(11) NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `sliders`
+--
+
+INSERT INTO `sliders` (`slider_id`, `slider_heading`, `slider_desc`, `slider_button`, `slider_btn_link`, `slider_ico_img`, `slider_bg_img`, `slider_status`) VALUES
+(1, 'Ice Cream', 'itâ€™s a great day for ice cream!', 'View Menu', 'http://localhost/ice-cream/menu.php', 'sl_icon-1.png', 'slider_bg-1.jpg', 1),
+(3, 'Ice Cream', 'itâ€™s a great day for ice cream!', 'View Menu', 'http://localhost/ice-cream/menu.php', 'sl_icon-3.png', 'slider_bg-3.jpg', 0),
+(4, 'Ice Cream', 'itâ€™s a great day for ice cream!', 'View Menu', 'http://localhost/ice-cream/menu.php', 'sl_icon-4.png', 'slider_bg-4.jpg', 0);
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `subscribers`
 --
 
@@ -158,19 +206,6 @@ CREATE TABLE IF NOT EXISTS `subscribers` (
 INSERT INTO `subscribers` (`subs_id`, `subs_email`) VALUES
 (1, 'subscribed@mail.com');
 
--- --------------------------------------------------------
-
---
--- Table structure for table `testimonials`
---
-
-CREATE TABLE IF NOT EXISTS `testimonials` (
-  `testi_id` int(11) NOT NULL,
-  `testis_name` varchar(255) NOT NULL,
-  `testis_review` varchar(255) NOT NULL,
-  `testis_photo` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
 --
 -- Indexes for dumped tables
 --
@@ -180,6 +215,12 @@ CREATE TABLE IF NOT EXISTS `testimonials` (
 --
 ALTER TABLE `admins`
   ADD PRIMARY KEY (`admin_id`);
+
+--
+-- Indexes for table `banners`
+--
+ALTER TABLE `banners`
+  ADD PRIMARY KEY (`banner_id`);
 
 --
 -- Indexes for table `contacts`
@@ -206,16 +247,16 @@ ALTER TABLE `menus`
   ADD PRIMARY KEY (`menu_id`);
 
 --
+-- Indexes for table `sliders`
+--
+ALTER TABLE `sliders`
+  ADD PRIMARY KEY (`slider_id`);
+
+--
 -- Indexes for table `subscribers`
 --
 ALTER TABLE `subscribers`
   ADD PRIMARY KEY (`subs_id`);
-
---
--- Indexes for table `testimonials`
---
-ALTER TABLE `testimonials`
-  ADD PRIMARY KEY (`testi_id`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -226,6 +267,11 @@ ALTER TABLE `testimonials`
 --
 ALTER TABLE `admins`
   MODIFY `admin_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
+--
+-- AUTO_INCREMENT for table `banners`
+--
+ALTER TABLE `banners`
+  MODIFY `banner_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT for table `contacts`
 --
@@ -242,15 +288,18 @@ ALTER TABLE `galleries`
 ALTER TABLE `menus`
   MODIFY `menu_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=8;
 --
+-- AUTO_INCREMENT for table `sliders`
+--
+ALTER TABLE `sliders`
+  MODIFY `slider_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=5;
+--
 -- AUTO_INCREMENT for table `subscribers`
 --
 ALTER TABLE `subscribers`
   MODIFY `subs_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
---
--- AUTO_INCREMENT for table `testimonials`
---
-ALTER TABLE `testimonials`
-  MODIFY `testi_id` int(11) NOT NULL AUTO_INCREMENT;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
+
+-- DEVELOPER -> Abu Horaira Mobin
