@@ -3,57 +3,25 @@ require 'header.php';
 require 'database/config.db.php';
 $selectMenus = "SELECT * FROM menus";
 $selectMenusReslut = mysqli_query($connect, $selectMenus);
+$selectSliders = "SELECT * FROM sliders";
+$selectSlidersReslut = mysqli_query($connect, $selectSliders);
 ?>
 	<!-- banner -->
 	<div class="pogoSlider" id="js-main-slider">
-		<div class="pogoSlider-slide" data-transition="verticalSlide" data-duration="2000" style="background-image:url(images/b1.jpg);">
+		<?php foreach($selectSlidersReslut as $slider){ ?>
+		<div class="pogoSlider-slide" data-transition="verticalSlide" data-duration="2000" style="background-image:url(admin/uploads/images/sliders/backgrounds/<?php echo $slider['slider_bg_img'] ?>);">
 			<div class="pogoSlider-slide-element">
 				<div class="container">
 					<div class="banner-img-agile">
-						<img src="images/bannerimg.png" alt="" class="img-fluid">
+						<img src="admin/uploads/images/sliders/icons/<?php echo $slider['slider_ico_img'] ?>" alt="" class="img-fluid">
 					</div>
-					<h3 class="text-white">ice cream</h3>
-					<p class="font-italic text-uppercase">it’s a great day for ice cream!</p>
-					<a class="bubbly-button" href="menu.html">View Menu</a>
+					<h3 class="text-white"><?php echo $slider['slider_heading'] ?></h3>
+					<p class="font-italic text-uppercase"><?php echo $slider['slider_desc'] ?></p>
+					<a class="bubbly-button" href="<?php echo $slider['slider_btn_link'] ?>"><?php echo $slider['slider_button'] ?></a>
 				</div>
 			</div>
 		</div>
-		<div class="pogoSlider-slide" data-transition="verticalSlide" data-duration="2000" style="background-image:url(images/b2.jpg);">
-			<div class="pogoSlider-slide-element">
-				<div class="container">
-					<div class="banner-img-agile">
-						<img src="images/bannerimg.png" alt="" class="img-fluid">
-					</div>
-					<h3 class="text-white">ice cream</h3>
-					<p class="font-italic text-uppercase">it’s a great day for ice cream!</p>
-					<a class="bubbly-button" href="menu.html">View Menu</a>
-				</div>
-			</div>
-		</div>
-		<div class="pogoSlider-slide " data-transition="verticalSlide" data-duration="2000" style="background-image:url(images/b3.jpg);">
-			<div class="pogoSlider-slide-element">
-				<div class="container">
-					<div class="banner-img-agile">
-						<img src="images/bannerimg.png" alt="" class="img-fluid">
-					</div>
-					<h3 class="text-white">ice cream</h3>
-					<p class="font-italic text-uppercase">it’s a great day for ice cream!</p>
-					<a class="bubbly-button" href="menu.html">View Menu</a>
-				</div>
-			</div>
-		</div>
-		<div class="pogoSlider-slide " data-transition="verticalSlide" data-duration="2000" style="background-image:url(images/b4.jpg);">
-			<div class="pogoSlider-slide-element">
-				<div class="container">
-					<div class="banner-img-agile">
-						<img src="images/bannerimg.png" alt="" class="img-fluid">
-					</div>
-					<h3 class="text-white">ice cream</h3>
-					<p class="font-italic text-uppercase">it’s a great day for ice cream!</p>
-					<a class="bubbly-button" href="menu.html">View Menu</a>
-				</div>
-			</div>
-		</div>
+		<?php } ?>
 	</div>
 	<!-- //banner -->
 

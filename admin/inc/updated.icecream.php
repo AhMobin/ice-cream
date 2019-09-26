@@ -25,6 +25,7 @@ if(!isset($_POST['update_icecream'])){
         header('Location: ../ice-cream-update.php?fields=empty');
         exit();
     }else if(!empty($iceImgName)){
+        
         $selectImg = "SELECT $iceImgName FROM galleris WHERE gl_img_id='$iceId'";
         $selectImgResult = mysqli_query($connect, $selectImg);
         $assocImg = mysqli_fetch_assoc($selectImgResult);

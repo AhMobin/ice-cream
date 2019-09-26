@@ -7,8 +7,8 @@ $menuCategory = $_POST['menu_cat'];
 $menuDesp = $_POST['menu_desc'];
 $menuPrice = $_POST['menu_price'];
 
-$_SESSION['icehead'] = $appName;
-$_SESSION['icedes'] = $appDesc;
+$_SESSION['menu_ame'] = $menuName;
+$_SESSION['menu_des'] = $menuDesp;
 
 
 $menuImg = $_FILES['menu_img'];

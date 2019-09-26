@@ -5,8 +5,8 @@ require '../../database/config.db.php';
 $iceHeading = $_POST['ice_heading'];
 $iceDesc = $_POST['ice_desc'];
 
-$_SESSION['icehead'] = $appName;
-$_SESSION['icedes'] = $appDesc;
+$_SESSION['icehead'] = $iceHeading;
+$_SESSION['icedes'] = $iceHeading;
 
 $iceImg = $_FILES['ice_cream_img'];
 $iceImgName = $_FILES['ice_cream_img']['name'];

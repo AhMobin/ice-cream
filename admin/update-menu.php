@@ -48,7 +48,7 @@ $assocMenu = mysqli_fetch_assoc($selectMenuResult);
                   <input type="file" name="update_img" class="form-control">
                 </div>
                 <div class="form-group">
-                    <input type="submit" name="update_menu" class="form-control btn btn-success" value="Add to Menu">
+                    <input type="submit" name="update_menu" class="form-control btn btn-success" value="Update Menu">
                 </div>
             </form>
         </div>

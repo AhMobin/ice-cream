@@ -54,18 +54,20 @@ require '../database/config.db.php';
 
         <li class="treeview"><a class="app-menu__item" href="#" data-toggle="treeview"><i class="app-menu__icon fa fa-edit"></i><span class="app-menu__label">Banners</span><i class="treeview-indicator fa fa-angle-right"></i></a>
           <ul class="treeview-menu">
-            <li><a class="treeview-item" href=""><i class="icon fa fa-circle-o"></i> Index Page</a></li>
+            <li><a class="treeview-item" href="add-banner.php"><i class="icon fa fa-circle-o"></i> Add Banner</a></li>
+            <li><a class="treeview-item" href="banners.php"><i class="icon fa fa-circle-o"></i> Banners</a></li>
+            <!-- <li><a class="treeview-item" href=""><i class="icon fa fa-circle-o"></i> Index Page</a></li>
             <li><a class="treeview-item" href=""><i class="icon fa fa-circle-o"></i> Menus Page</a></li>
             <li><a class="treeview-item" href=""><i class="icon fa fa-circle-o"></i> Specials Page</a></li>
             <li><a class="treeview-item" href=""><i class="icon fa fa-circle-o"></i> About Page</a></li>
-            <li><a class="treeview-item" href=""><i class="icon fa fa-circle-o"></i> Contact Page</a></li>
+            <li><a class="treeview-item" href=""><i class="icon fa fa-circle-o"></i> Contact Page</a></li> -->
           </ul>
         </li>
 
         <li class="treeview"><a class="app-menu__item" href="#" data-toggle="treeview"><i class="app-menu__icon fa fa-edit"></i><span class="app-menu__label">Homepage Sliders</span><i class="treeview-indicator fa fa-angle-right"></i></a>
           <ul class="treeview-menu">
-            <li><a class="treeview-item" href=""><i class="icon fa fa-circle-o"></i> Add to Slider</a></li>
-            <li><a class="treeview-item" href=""><i class="icon fa fa-circle-o"></i> Slider Images</a></li>
+            <li><a class="treeview-item" href="add-slider.php"><i class="icon fa fa-circle-o"></i> Add to Slider</a></li>
+            <li><a class="treeview-item" href="sliders.php"><i class="icon fa fa-circle-o"></i> Sliders</a></li>
           </ul>
         </li>
 
